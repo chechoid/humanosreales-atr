@@ -19,7 +19,7 @@
  *
  * ------------------------------------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Poppins-Regular:280,280i&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Anton:400&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Anton:380&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Fira+Mono&display=swap);
 
 
@@ -50,15 +50,15 @@
   --text-bold-color: #DEF241;
   --code-highlight-color: rgba(255,255,0,0.5);
   --inverse-text-color: #000000;
-  --inverse-background-color: #02D9D5;
-  --inverse-header-color: #FFFFFF;
+  --inverse-background-color: #DEF241;
+  --inverse-header-color: #D4499C;
   --inverse-link-color: #DEF241;
   --title-slide-background-color: #DEF241;
   --title-slide-text-color: #000000;
   --header-background-color: #DEF241;
   --header-background-text-color: #FFFFFF;
   --primary: #DEF241;
-  --secondary: #02D9D5;
+  --secondary: #DEF241;
   --white: #FFFFFF;
   --black: #000000;
 }
@@ -177,7 +177,7 @@ img, video, iframe {
   max-width: 100%;
 }
 blockquote {
-  border-left: solid 5px #02D9D580;
+  border-left: solid 5px #DEF24180;
   padding-left: 1em;
 }
 .remark-slide table {
@@ -192,7 +192,7 @@ th, td {
   padding: 5px;
 }
 .remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
-  background: #CCF7F6;
+  background: #F8FCD9;
 }
 table.dataTable tbody {
   background-color: var(--background-color);
@@ -202,7 +202,7 @@ table.dataTable.display tbody tr.odd {
   background-color: var(--background-color);
 }
 table.dataTable.display tbody tr.even {
-  background-color: #CCF7F6;
+  background-color: #F8FCD9;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);

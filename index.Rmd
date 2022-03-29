@@ -27,9 +27,9 @@ knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
 library(xaringanthemer)
 style_duo_accent(
   primary_color = "#DEF241",
-  secondary_color = "#02D9D5",
-  inverse_header_color = "#FFFFFF",
-  header_font_google = google_font("Anton", "400"),
+  secondary_color = "#DEF241",
+  inverse_header_color = "#D4499C",
+  header_font_google = google_font("Anton", "380"),
   text_font_google   = google_font("Poppins-Regular", "280", "280i"),
   code_font_google   = google_font("Fira Mono")
 )
@@ -42,26 +42,24 @@ meta() %>%
   meta_social(
     title = "ATR",
     description = paste(
-      "Esta es la presentación para la conferencia People Analytics World 2021 Latam sobre consejos sobre cómo empezar a programar en R y lograr avances en el aprendizaje",
+      "Esta es la presentación para el HR Bootcamp de Humanos Reales sobre consejos sobre cómo empezar a programar en R y lograr avances en el aprendizaje",
       "Desarrollada por Sergio Garcia Mora y Yanel Paulette."
     ),
     url = "https://bit.ly/paw-la-r4hr-2021",
-    image = "https://raw.githubusercontent.com/chechoid/paw-latam-2021/main/Archivos/portada.png",
+    image = "https://github.com/chechoid/humanosreales-atr/blob/main/Archivos/portada.png?raw=true",
     image_alt = paste(
-      "Codear en R para RRHH: Una breve guía para aprender a programar y vivir para contarlo", 
-      "Tucana's People Analytics World 2021 Latam", 
-      "Autor: Sergio Garcia Mora"
+      "ATR: A todo R en RH", 
+      "HR Bootcamp de Humanos Reales", 
+      "Autor: Sergio Garcia Mora | Yanel Paulette"
     ),
     og_type = "website",
     og_author = "Sergio Garcia Mora",
     twitter_card_type = "summary_large_image",
     twitter_creator = "@sergiogarciamor",
-    twitter_site = "@data4hr"
+    twitter_site = "@club_rrhh"
   )
 ```
 
----
-class: center, middle
 
 ---
 class: inverse, center, middle
@@ -500,9 +498,8 @@ ggplot(perf_by_source, aes(x=performance_promedio,
   theme(plot.title = element_text(hjust = 1))
 
 # Plot 2
-
-expectativas_laborales <- gs4_get("1HeFbgf0aubb5HBSFJTRzGCpW536O1cji7I6lgiNqvqg") %>%
-  read_sheet()
+expectativas_laborales <- read_delim("data/expectativas_laborales.csv",
+                                     delim = ";")
 
 exp_lab <- expectativas_laborales%>%
   rename(Expectativa = Período) %>%
@@ -1135,7 +1132,7 @@ ggplot(d1) +
 ## Clones
 
 .pull-left[
-Un día estaba explicando el método de clustering **de vecinos más cercanos** o **k-nn** por su nombre en inglés y usé este dibujo hecho en 
+Un día estaba explicando el método de clustering **de vecinos más cercanos** o **k-nn** por su nombre en inglés y usé este dibujo hecho en Paint.
 
 .center[<img src="clones/knn.jpg" width="40%" />]
 
@@ -1440,9 +1437,9 @@ class: inverse middle center
 
 `r icons::fontawesome("paper-plane")` [Telegram](https://t.me/SergioGarciaMora)
 
-`r icons::fontawesome("envelope")` [sergio.g.mora@dataiq.com.ar](mailto:sergio.g.mora@dataiq.com.ar)
+`r icons::fontawesome("envelope")` [sergio@d4hr.com](mailto:sergio@d4hr.com)
 
-`r icons::fontawesome("github")` [Repositorio de la presentación](https://github.com/chechoid/paw-latam-2021)
+`r icons::fontawesome("github")` [Repositorio de la presentación](https://github.com/chechoid/humanosreales-atr)
 
 ]
 
@@ -1454,25 +1451,3 @@ class: inverse middle center
 class: inverse, middle, center
 # Agradecimientos, fuentes y créditos
 
----
-# Agradecimientos
-
-.pull-left[
-<img src="https://media.giphy.com/media/d68IdpvmAHohx5NMEV/giphy.gif" />
-]
-
-.pull-right[
-Quiero agradecer a:
-
-`r emo::ji("red_heart")` Jesica y Jazmin por su constante apoyo y amor. 
-
-`r emo::ji("100")` Barry Swales y a todos en Tucana por organizar un evento tan increíble.
-
-`r emo::ji("gold")` Marta Gascón Corella por su generosidad y pensar en mí para ser parte del #PAWorld2021.
-
-`r emo::ji("cheers")` La INCREIBLE comunidad de R de Latinoamérica y de todo el mundo.
-
-`r emo::ji("hooray")` Cada uno de los que ha sido parte del Club de R para RRHH. No habría llegado tan lejos sin ustedes.
-
-`r emo::ji("spock")` Mis mentores, Luis María Cravino y Tracey Smith: Son una gran fuente de inspiración y un motor para que esté en constante aprendizaje.
-]
