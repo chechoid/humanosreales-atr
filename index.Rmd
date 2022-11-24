@@ -2,7 +2,7 @@
 title: "ATR"
 subtitle: "A todo R en RH"
 author: 
-  - "Sergio Garcia Mora | Yanel Paulette"
+  - "Sergio Garcia Mora"
   - "R4HR Club de R para RRHH"
 output:
   xaringan::moon_reader:
@@ -45,12 +45,12 @@ meta() %>%
       "Esta es la presentación para el HR Bootcamp de Humanos Reales sobre consejos sobre cómo empezar a programar en R y lograr avances en el aprendizaje",
       "Desarrollada por Sergio Garcia Mora y Yanel Paulette."
     ),
-    url = "https://bit.ly/paw-la-r4hr-2021",
+    url = "https://humanos-reales-atr.netlify.app",
     image = "https://github.com/chechoid/humanosreales-atr/blob/main/Archivos/portada.png?raw=true",
     image_alt = paste(
       "ATR: A todo R en RH", 
       "HR Bootcamp de Humanos Reales", 
-      "Autor: Sergio Garcia Mora | Yanel Paulette"
+      "Autor: Sergio Garcia Mora"
     ),
     og_type = "website",
     og_author = "Sergio Garcia Mora",
@@ -103,6 +103,7 @@ class: inverse, center, middle
 `r emo::ji("crystal")` Un caso de uso bien conocido es para poder realizar *análisis predictivos*, por ejemplo para predecir las renuncias de los empleados.
 
 ```{r pred1, echo=FALSE}
+
 library(tidyverse)
 library(caret) 
 library(scales)
@@ -206,8 +207,8 @@ legend("bottomright", legend=c("Regresión Logística", "Árbol de Decisión"),
        col=c("#1c61b6", "#008600"), lwd=2)
 ```
 
-
 ]
+
 ---
 ## Cluster Analysis
 
@@ -258,6 +259,7 @@ ggplot(modelo_hr_test, aes(x = last_evaluation, y = satisfaction_level, color = 
 ```
 
 ]
+
 ---
 ## Organizational Network Analysis
 
@@ -473,6 +475,7 @@ Pueden chequear este ejemplo desarrollado por [Edward Parker](https://www.lshtm.
 En R podés hacer cualquier tipo de gráfico. 
 
 ```{r plot1, echo=FALSE, fig.show='hold', out.width="33%"}
+
 library(hrbrthemes) # Agrega estilos predefinidos y paletas de colores
 library(ggeconodist)
 library(ggthemes)
@@ -575,9 +578,10 @@ rh <- rh %>%
                                     "Jefe", "Gerente")))
 
 
-rh %>% 
-  ggplot(aes(x = puesto, y = sueldo_ft)) +
-  geom_econodist(width = 0.5) +
+# Plot 3
+
+  ggplot(rh,aes(x = puesto, y = sueldo_ft)) +
+  #geom_econodist(width = 0.5,) +
   geom_point(aes(y = sueldo_bruto, color = performance), size = 2, alpha = 0.3,
              position = position_jitter(width = 0.2)) +
   scale_color_colorblind() +
@@ -588,7 +592,6 @@ rh %>%
        caption = "Datos de desempeño generados aleatoriamente") +
   estilov
 
-# Plot 3
 
 
 
@@ -721,6 +724,7 @@ plot_grid(p1, p2, nrow=1, rel_widths = c(0.8, .2))
 ```
 
 ]
+
 ---
 class: inverse, center, middle
 # Literalmente,
@@ -885,7 +889,7 @@ class: center, middle
 * ### `r emo::ji("geek")` HR Nerd
 * `r emo::ji("biceps")` Licenciado en Relaciones del Trabajo con formación en Data Mining
 * `r emo::ji("inventor")` Diplomado en Ciencias Sociales Computacionales de UNSAM
-* `r emo::ji("chart")` SME People Analytics at [Data IQ](https://dataiq.com.ar/)
+* `r emo::ji("chart")` Consultor Interno de Workforce Analytics [MSD](https://www.corporativo.msd.com.ar/)
 * `r emo::ji("teacher")` Profesor de People Analytics en ITBA
 * `r emo::ji("airplane")` Fundador de [Data 4HR](https://data-4hr.com/)
 * `r emo::ji("wine")` Fundador de [R4HR Club de R para RRHH](https://r4hr.club)
@@ -941,6 +945,7 @@ Una de nuestras integrantes utilizó el paquete `flexdashboard` para crear un ta
 
 Pudo consolidar información de diversas fuentes, adaptarla en función de las solicitudes de sus clientes internos y despertar interés en los análisis de parte de los stakeholders.
 ]
+
 ---
 ## Informes salariales en el ámbito público
 
@@ -1134,18 +1139,24 @@ ggplot(d1) +
 .pull-left[
 Un día estaba explicando el método de clustering **de vecinos más cercanos** o **k-nn** por su nombre en inglés y usé este dibujo hecho en Paint.
 
-.center[<img src="clones/knn.jpg" width="40%" />]
+.center[<img src="clones/knn.jpg" width="60%" />]
 
-Y después de hacerlo pensé *"esto lo podría hacer con datos"*.
-
-Y salió esto
 ]
 
 --
 
 .pull-right[
-<img src="clones/clones.png" />
+<img src="Archivos/esto_lo_podria_hacer_con_datos.jpg" width = "80%" />
+
+Y salió esto
+
 ]
+
+---
+class: center, middle
+
+<img src="clones/clones.png" width = "65%" />
+
 ---
 .left-column[
 
@@ -1196,6 +1207,7 @@ Así que exploraremos el archivo [Wine Ratings Dataset](https://github.com/rford
 .center[
 <img src="https://news.agrofystatic.com/vino_malbec_agrofy_news.jpg?d=620x375", width="40%" />
 ]
+
 ---
 
 ### Vacaciones y Vino
@@ -1318,6 +1330,7 @@ training_ratings <- read_delim("data/training_ratings.csv", delim = ";")
 
 ```
 ]
+
 ---
 ### Ranking de Proveedores de Capacitación
 
@@ -1426,12 +1439,46 @@ class: inverse middle center
 ]
 
 ---
+class: inverse, middle, center
+
+# Bonus
+
+---
+# Bonus
+
+.pull-left[
+Como parte del curso Introducción a R para RRHH desarrollé el paquete **introR4hr** que es un tutorial interactivo de R con los principios básicos para comenzar a trabajar con R. Las instrucciones para usarlo las pueden encontrar [en este link](https://github.com/chechoid/introR4hr).
+
+```{r intror4hr, eval=FALSE}
+# Instalar estos paquetes
+install.packages("remotes")
+install.packages("learnr")
+
+# Instalar los tutoriales
+remotes::install_github("chechoid/introR4hr")
+
+# Correr los tutoriales
+learnr::run_tutorial("sesion0", "introR4hr")
+
+```
+
+Además acá podés encontrar todo el material de nuestra comunidad: [linktr.ee/r4hrclub](https://linktr.ee/r4hrclub) `r emo::ji("kiwi")`
+]
+
+.pull-right[
+<img src="https://media.giphy.com/media/kC9Kveaw468cPLxpYE/giphy.gif" />
+
+]
+
+---
 # Let's connect!
 
 .pull-left[
-`r icons::fontawesome("link")` Presentación: [https://bit.ly/paw-la-r4hr-2021](https://bit.ly/paw-la-r4hr-2021)
+`r icons::fontawesome("link")` Presentación: [bit.ly/hrb-atr](https://bit.ly/hrb-atr)
 
-`r icons::fontawesome("linkedin")` [LinkedIn](https://www.linkedin.com/in/sergiogarciamora/?locale=en_US)
+`r icons::fontawesome("rebel")` Blog: [chechoid.netlify.app](https://chechoid.netlify.app)
+
+`r icons::fontawesome("linkedin")` [LinkedIn](https://www.linkedin.com/in/sergiogarciamora)
 
 `r icons::fontawesome("twitter")` [Twitter](https://twitter.com/sergiogarciamor)
 
@@ -1446,8 +1493,4 @@ class: inverse middle center
 .pull-right[
 <img src="https://media.giphy.com/media/fWfowxJtHySJ0SGCgN/giphy.gif" />
 ]
-
----
-class: inverse, middle, center
-# Agradecimientos, fuentes y créditos
 
