@@ -26,8 +26,8 @@ knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
 style_duo_accent(
-  primary_color = "#DEF241",
-  secondary_color = "#DEF241",
+  primary_color = "#3500B3",
+  secondary_color = "#3500B3",
   inverse_header_color = "#D4499C",
   header_font_google = google_font("Anton", "380"),
   text_font_google   = google_font("Poppins-Regular", "280", "280i"),
