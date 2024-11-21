@@ -60,10 +60,8 @@ meta() %>%
   )
 ```
 
-
 ---
 class: inverse, center, middle
-
 # ¿Qué es R?
 
 ---
@@ -889,7 +887,8 @@ class: center, middle
 * ### `r emo::ji("geek")` HR Nerd
 * `r emo::ji("biceps")` Licenciado en Relaciones del Trabajo con formación en Data Mining
 * `r emo::ji("inventor")` Diplomado en Ciencias Sociales Computacionales de UNSAM
-* `r emo::ji("chart")` Consultor Interno de Workforce Analytics [MSD](https://www.corporativo.msd.com.ar/)
+* `r emo::ji("rockstar")` Data Science Associate Principal en [Accenture](https://www.accenture.com/ar-es)
+* `r emo::ji("chart")` Consultor Interno de Workforce Analytics en  [MSD](https://www.corporativo.msd.com.ar/)
 * `r emo::ji("teacher")` Profesor de People Analytics en ITBA
 * `r emo::ji("airplane")` Fundador de [Data 4HR](https://data-4hr.com/)
 * `r emo::ji("wine")` Fundador de [R4HR Club de R para RRHH](https://r4hr.club)
